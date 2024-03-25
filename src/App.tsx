@@ -1,10 +1,7 @@
+import Example from "./Example";
 
 function App() {
-  return (
-    <div>
-      <h1>Hello world</h1>
-    </div>
-  );
+  return <Example />
 }
 
 export default App;

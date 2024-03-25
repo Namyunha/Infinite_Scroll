@@ -1,14 +1,20 @@
 import { useState } from "react";
 import { getPostsPage } from "../api/axios";
 
+interface postsProps {
+    pageNum: number
+}
 
-const usePosts = (pageNum = 1) => {
+interface Post {
+    
+}
+
+const usePosts = ({pageNum}:postsProps) => {
     const [results, setResults] = useState<any[]>([])
     const [isLoading, setIsLoading] = useState(false)
     const [isError, setIsError] = useState(false)
     const [error, setError] = useState<any>({})
     const [hasNextPage, setHasNextPage] = useState(false)
-    
     const controller = new AbortController()
     const { signal } = controller
 

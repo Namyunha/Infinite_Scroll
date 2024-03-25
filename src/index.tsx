@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import GlobalStyle from '../src/css/GlobalStyle'
+import GlobalStyle from '../src/css/GlobalStyle';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
+const queryClient = new QueryClient()
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -10,6 +12,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <>
     <GlobalStyle/>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <App />
+    </QueryClientProvider>
   </>
 );
