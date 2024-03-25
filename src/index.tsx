@@ -1,4 +1,4 @@
-import React from 'react';
+import './css/index.css';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import GlobalStyle from '../src/css/GlobalStyle';

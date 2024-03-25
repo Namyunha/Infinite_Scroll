@@ -21,7 +21,7 @@ const Example = () => {
       
       intObserver.current = new IntersectionObserver((posts) => {
         if (posts[0].isIntersecting && hasNextPage) {
-          console.log('we are near ');
+          console.log('we are near the last post!');
           setPageNum((prevPageNum) => prevPageNum + 1);
         }
       });
@@ -41,6 +41,8 @@ const Example = () => {
     <>
       <h1> &infin; Infinite Query &amp; Scroll <br />&inFin;
       Ex. 1 - React only </h1>
+      {content}
+      {isLoading && <p>Loading More Posts...</p> }
       <p><a href="#top">Back to Top</a></p>
     </>
   )

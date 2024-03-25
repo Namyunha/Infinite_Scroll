@@ -5,10 +5,6 @@ interface postsProps {
     pageNum: number
 }
 
-interface Post {
-    
-}
-
 const usePosts = ({pageNum}:postsProps) => {
     const [results, setResults] = useState<any[]>([])
     const [isLoading, setIsLoading] = useState(false)
