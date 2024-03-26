@@ -7,12 +7,12 @@ interface PostProps {
 }
 
 const Post =  React.forwardRef(( post:any, ref:any)=> {
-
+    console.log("Post: post + ", post)
     const postBody = (
         <>
-            <h2>{post.title}</h2>
-            <p>{post.body}</p>
-            <p>Post ID: {post.id}</p>
+            <h2>{post.post.title}</h2>
+            <p>{post.post.body}</p>
+            <p>Post ID: {post.post.id}</p>
         </>
     )
 

@@ -39,7 +39,10 @@ const Example2 = () => {
   if(status === 'error') return <p>Error: {(error as Error).message}</p>
 
   const content = data?.pages.map(pg => {
+    
     return pg.map((post: any, i:number) => {
+      
+    
       if(pg.length === i + 1) {
         return <Post ref={lastPostRef} key={post.id} post={post} />
       }

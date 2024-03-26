@@ -14,19 +14,23 @@ const Example = () => {
   } = usePosts({pageNum});
 
   const intObserver = useRef<IntersectionObserver | null>(null);
+
+
+
   const lastPostRef = useCallback((item: HTMLDivElement | null) => {
     if (isLoading || !item) return;
 
     if (intObserver.current) {intObserver.current.disconnect();}
-      
-      intObserver.current = new IntersectionObserver((posts) => {
-        if (posts[0].isIntersecting && hasNextPage) {
-          console.log('we are near the last post!');
-          setPageNum((prevPageNum) => prevPageNum + 1);
-        }
-      });
+
+    intObserver.current = new IntersectionObserver((posts) => {
+      if (posts[0].isIntersecting && hasNextPage) {
+        console.log('we are near the last post!');
+        setPageNum((prevPageNum) => prevPageNum + 1);
+      }
+    });
     
     if(item) {intObserver.current.observe(item);}
+
   }, [isLoading, hasNextPage]);
   if(isError) return <p>Error: {error.message}</p>
 

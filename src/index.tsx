@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <>
-    <GlobalStyle/>
+    {/* <GlobalStyle/> */}
     <QueryClientProvider client={queryClient}>
       <App />
     </QueryClientProvider>
